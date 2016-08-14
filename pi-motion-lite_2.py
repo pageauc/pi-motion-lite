@@ -89,7 +89,7 @@ class MyMotionDetector(picamera.array.PiMotionAnalysis):
           if (now - motion_timestamp) >= video_postseconds:
                motion_detected = False
       else:
-         if th:
+        if th:
              motion_detected = True
         if debug:
                 idx = a > motion_threshold
