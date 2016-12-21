@@ -35,9 +35,9 @@ from a putty ssh session or pi monitor console.
     wget https://raw.github.com/pageauc/pi-motion-lite/master/pi-motion-lite.py
     chmod + x pi-motion-lite.py
     
-To execute    
+To execute     
     ./pi-motion-lite.py
-or
+or    
     python ./pi-motion-lite.py
 
 Use IDLE, nano or any other text editor to modify code for your project needs.
