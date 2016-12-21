@@ -1,6 +1,6 @@
- ##                     pi-motion-lite
- ###       raspberry pi with camera module using picamera python module
- ###             to do simple motion detection
+##                     pi-motion-lite
+####       raspberry pi with camera module using picamera python module
+####             to do simple motion detection
                  
 ###Introduction
 This is a raspberry pi computer minimal motion detection python script.
