@@ -33,6 +33,7 @@ from a putty ssh session or pi monitor console.
     mkdir pi-motion-lite
     cd pi-motion-lite
     wget https://raw.github.com/pageauc/pi-motion-lite/master/pi-motion-lite.py
+<<<<<<< HEAD:Readme.md
     chmod +x pi-motion-lite.py
     
 To execute
@@ -41,6 +42,13 @@ To execute
 
 or    
 
+=======
+    chmod + x pi-motion-lite.py
+    
+To execute     
+    ./pi-motion-lite.py
+or    
+>>>>>>> origin/master:Readme.md
     python ./pi-motion-lite.py
 
 Use IDLE, nano or any other text editor to modify code for your project needs.
