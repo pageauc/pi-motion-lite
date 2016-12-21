@@ -1,5 +1,5 @@
-##Raspberry Pi pi-motion-lite
-####A Simple motion detection python script
+#pi-motion-lite
+####A Simple Raspberry Pi Computer Motion Detection Python Script
                  
 ###Introduction
 This is a raspberry pi computer minimal motion detection python script for use
