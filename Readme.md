@@ -1,32 +1,29 @@
-##Raspberry Pi pi-motion-lite.py
-####Simple motion detection using RPI camera module with picamera python module
+##Raspberry Pi pi-motion-lite
+####A Simple motion detection python script
                  
 ###Introduction
-This is a raspberry pi computer minimal motion detection python script.
-The script requires the picamera python module to be installed.
+This is a raspberry pi computer minimal motion detection python script for use
+in a users project. The script requires the picamera python module to be installed.
 It uses piRGBArray data streams to detect motion (pixel differences). 
-Day and night camera settings are supported for streams.  
-This is a minimal code implementation for use in projects.
+This is a minimal code implementation for use in a users project.
 
 ###Hardware
 Raspberry Pi computer pi zero, A, A+, B, B+, pi3, compute module Etc.
 Raspberry Pi camera module
 
-additiona support hardware eg SD card, PowerSupply, cables, etc.
+additional support hardware eg SD card, PowerSupply, cables, etc.
 I will not list the details for setup since you can google for this information
-check out  http://www.raspberrypi.org/downloads/ for one source of information.
+check out http://www.raspberrypi.org/downloads/ for one source of information.
 
 This assumes you have a raspbian image installed and operational with
 the picamera module installed and operational per raspi-config setup
 
 ###Software
-This code is available on github at https://www.github.com/pageauc
+This code is available on github at https://www.github.com/pageauc/pi-motion-lite
 
 To setup pi-motion-lite on your raspberry pi perform the following
-from a putty ssh session or pi monitor console.
+from a logged in putty ssh or pi desktop terminal session.
 
-    sudo apt-get update
-    sudo apt-get upgrade
     sudo apt-get install python-picamera
     cd ~
     mkdir pi-motion-lite
