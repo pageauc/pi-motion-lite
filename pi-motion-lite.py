@@ -7,23 +7,25 @@ import picamera
 import picamera.array
 from fractions import Fraction
 
-#Constants
-SECONDS2MICRO = 1000000  # Constant for converting Shutter Speed in Seconds to Microseconds
-
 verbose = True     # Display showMessage if True
-threshold = 10     # How Much a pixel has to change
-sensitivity = 200  # How Many pixels need to change for motion detection
-nightShut = 5.5    # seconds Night shutter Exposure Time default = 5.5  Do not exceed 6 since camera may lock up
-nightISO = 800
 
+# Motion Settings
+threshold = 30     # How Much a pixel has to change
+sensitivity = 300  # How Many pixels need to change for motion detection
+
+# Camera Settings
 testWidth = 128
 testHeight = 80
+nightShut = 5.5    # seconds Night shutter Exposure Time default = 5.5  Do not exceed 6 since camera may lock up
+nightISO = 800
 if nightShut > 6:
     nightShut = 5.9
+SECONDS2MICRO = 1000000  # Constant for converting Shutter Speed in Seconds to Microseconds    
 nightMaxShut = int(nightShut * SECONDS2MICRO)
 nightMaxISO = int(nightISO)
-nightSleepSec = 10  
+nightSleepSec = 8   # Seconds of long exposure for camera to adjust to low light 
 
+#-----------------------------------------------------------------------------------------------           
 def userMotionCode():
     # Users can put code here that needs to be run prior to taking motion capture images
     # Eg Notify or activate something.
@@ -31,19 +33,22 @@ def userMotionCode():
     
     msgStr = "Motion Found So Do Something ..."
     showMessage("userMotionCode",msgStr)  
-    return   
+    return
     
+#-----------------------------------------------------------------------------------------------               
 def showTime():
     rightNow = datetime.datetime.now()
     currentTime = "%04d%02d%02d-%02d:%02d:%02d" % (rightNow.year, rightNow.month, rightNow.day, rightNow.hour, rightNow.minute, rightNow.second)
     return currentTime    
- 
+
+#-----------------------------------------------------------------------------------------------             
 def showMessage(functionName, messageStr):
     if verbose:
         now = showTime()
         print ("%s %s - %s " % (now, functionName, messageStr))
     return
- 
+
+#-----------------------------------------------------------------------------------------------               
 def checkForMotion(data1, data2):
     # Find motion between two data streams based on sensitivity and threshold
     motionDetected = False
@@ -62,13 +67,14 @@ def checkForMotion(data1, data2):
             break; #break outer loop.
     if pixChanges > sensitivity:
         motionDetected = True
-    return motionDetected  
-  
+    return motionDetected 
+    
+#-----------------------------------------------------------------------------------------------             
 def getStreamImage(daymode):
     # Capture an image stream to memory based on daymode
     isDay = daymode
     with picamera.PiCamera() as camera:
-        time.sleep(2)
+        time.sleep(.5)
         camera.resolution = (testWidth, testHeight)
         with picamera.array.PiRGBArray(camera) as stream:
             if isDay:
@@ -87,7 +93,8 @@ def getStreamImage(daymode):
                 time.sleep( nightSleepSec )
             camera.capture(stream, format='rgb')
             return stream.array
-            
+
+#-----------------------------------------------------------------------------------------------           
 def Main():
     dayTime = True
     msgStr = "Checking for Motion dayTime=%s threshold=%i sensitivity=%i" % ( dayTime, threshold, sensitivity)
@@ -97,9 +104,10 @@ def Main():
         stream2 = getStreamImage(dayTime)
         if checkForMotion(stream1, stream2):
             userMotionCode()
-        stream2 = stream1   
+        stream1 = stream2        
     return
      
+#-----------------------------------------------------------------------------------------------           
 if __name__ == '__main__':
     try:
         Main()
