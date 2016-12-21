@@ -1,6 +1,5 @@
-##                     pi-motion-lite
-####       raspberry pi with camera module using picamera python module
-####             to do simple motion detection
+##Raspberry Pi pi-motion-lite.py
+####Simple motion detection using RPI camera module with picamera python module
                  
 ###Introduction
 This is a raspberry pi computer minimal motion detection python script.
@@ -74,8 +73,11 @@ in the checkForMotion function.
 
 Let me know what type of projects you implement with this.
 
-I also have pi-timolo python program on my github repository that implements
-timelapse, motion detection and low light including auto detect of day, night, twilight
+I also have pi-timolo python program on my github repository here
+
+    https://github.com/pageauc/pi-timolo 
+    
+pi-timolo implements timelapse, motion detection and low light including auto detect of day, night, twilight
 changes without the need for a clock or time calculation.  There are
 also various previous versions that use raspistill rather than picamera python module
 
