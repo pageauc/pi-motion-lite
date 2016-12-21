@@ -16,8 +16,8 @@ sensitivity = 200  # How Many pixels need to change for motion detection
 nightShut = 5.5    # seconds Night shutter Exposure Time default = 5.5  Do not exceed 6 since camera may lock up
 nightISO = 800
 
-testWidth = 100
-testHeight = 75
+testWidth = 128
+testHeight = 80
 if nightShut > 6:
     nightShut = 5.9
 nightMaxShut = int(nightShut * SECONDS2MICRO)
