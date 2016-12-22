@@ -7,7 +7,8 @@ import picamera
 import picamera.array
 from fractions import Fraction
 
-verbose = True     # Display showMessage if True
+# Logging
+verbose = True     # False= Non True=Display showMessage
 
 # Motion Settings
 threshold = 30     # How Much a pixel has to change
