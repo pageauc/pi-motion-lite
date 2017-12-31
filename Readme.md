@@ -1,10 +1,10 @@
 # pi-motion-lite
 #### A Simple Raspberry Pi Computer Motion Detection Python Script
-                 
+
 ### Introduction
 This is a raspberry pi computer minimal motion detection python script for use
 in a users project. The script requires the picamera python module to be installed.
-It uses piRGBArray data streams to detect motion (pixel differences). 
+It uses piRGBArray data streams to detect motion (pixel differences).
 This is a minimal code implementation for use in a users project.
 
 ### Hardware
@@ -31,12 +31,12 @@ from a logged in putty ssh or pi desktop terminal session.
     cd pi-motion-lite
     wget https://raw.github.com/pageauc/pi-motion-lite/master/pi-motion-lite.py
     chmod +x pi-motion-lite.py
-    
+
 To execute
-     
+
     ./pi-motion-lite.py
 
-or    
+or
 
     python pi-motion-lite.py
 
@@ -46,9 +46,9 @@ adjust threshold and sensitivity to suit conditions.
 threshold   - How Much a pixel needs to change before it is counted.
               Normal value would be 10 but can be between 1 and 254
               254 would be full black to white change.
-sensitivity - How Many pixels need to change before motion detected. 
+sensitivity - How Many pixels need to change before motion detected.
               Higher value is less sensitive.  default=200
-              for 128x80 stream max value would be 10240 px             
+              for 128x80 stream max value would be 10240 px
 
 #### Important
 If you are using a previous Picamera python module and images are black
@@ -72,8 +72,8 @@ Let me know what type of projects you implement with this.
 
 I also have pi-timolo python program on my github repository here
 
-    https://github.com/pageauc/pi-timolo 
-    
+    https://github.com/pageauc/pi-timolo
+
 pi-timolo implements timelapse, motion detection and low light including auto detect of day, night, twilight
 changes without the need for a clock or time calculation.  There are
 also various previous versions that use raspistill rather than picamera python module
